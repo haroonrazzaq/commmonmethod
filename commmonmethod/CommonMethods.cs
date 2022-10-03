@@ -57,6 +57,13 @@ namespace commonmethod
 
         }
 
+        public void search_method(By locate, string data)
+        {
+            IWebElement search_input = FindElement(locate);
+            search_input.SendKeys(data);    
+        }
+
+
 
 
     }

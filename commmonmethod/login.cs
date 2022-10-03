@@ -50,7 +50,7 @@ namespace commonmethod
             Settext(email, username_email);
             Settext(passwrd, username_password);
             ForClick(button);
-            Thread.Sleep(9000);
+            Thread.Sleep(12000);
             ForClick(Button1);
         }
 

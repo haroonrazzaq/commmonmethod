@@ -7,6 +7,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Edge;
+using commmonmethod;
 
 namespace commonmethod
 {
@@ -23,24 +24,45 @@ namespace commonmethod
         }
 
         [TestMethod]
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML","login.xml", "login", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "drivern.xml", "login", DataAccessMethod.Sequential)]
         public void loginbutton()
         {
             IWebDriver adriver = SeleniumInit("EdgeDriver");
-           // IWebDriver adriver = new EdgeDriver();
+            // IWebDriver adriver = new EdgeDriver();
             adriver.Manage().Window.Maximize();
             adriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
             adriver.Url = " https://www.beyondeast.com/pages/women";
-           
-           // string url = TestContext.DataRow["url"].ToString();
+
+            // string url = TestContext.DataRow["url"].ToString();
             string user = TestContext.DataRow["username"].ToString();
             string pass = TestContext.DataRow["password"].ToString();
-           
+
             login Ol = new login(adriver);
-           
-            Ol.fortext(user,pass);
+
+            Ol.fortext(user, pass);
+            
+
+
+
 
         }
+        /*
+        //For Click on Search Field
+
+        [TestMethod]
+
+
+
+         public void SearchCick() 
+        {
+            IWebDriver adriver = SeleniumInit("EdgeDriver");
+            adriver.Url = " https://www.beyondeast.com/pages/women";
+            searchbar sb = new searchbar();
+            sb.ForClick();
+           // sb.search_function("Men");
+
+        }
+        */
 
     }
 }
