@@ -41,7 +41,9 @@ namespace commonmethod
 
            
         }
+        private static readonly log4net.ILog log =
 
+log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
         public void fortext(string username_email , string username_password)
@@ -52,6 +54,8 @@ namespace commonmethod
             ForClick(button);
             Thread.Sleep(12000);
             ForClick(Button1);
+
+            log.Info("Login is working");
         }
 
     }

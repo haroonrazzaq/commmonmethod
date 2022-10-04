@@ -9,6 +9,7 @@ namespace commonmethod
 
     public class commmon_method
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public IWebDriver commondriver;
         Actions actions;
