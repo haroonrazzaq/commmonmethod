@@ -12,30 +12,33 @@ namespace commmonmethod
 {
     public class searchbar : commmon_method
     {
-       By click_search = By.XPath("/div/header/div/details-modal/details/summary/span/svg[1]");
+       By click_search = By.XPath("//*[@id=\'shopify-section-header-men\']/div/header/div/details-modal/details/summary/span/span");
         By search_type = By.XPath("//input[@id=\'Search-In-Modal\']");
-        By click_btn = By.XPath("//*[@id=\'shopify-section-template--16120528011476__main\']/div/div/div/form/div/button");
+        By click_btn = By.XPath("//*[@id=\'shopify-section-template--16120528011476__main\']/div/div[1]/div/form/div/button");
 
 
-        public void ForClick()
+        public void ForClick(By locate)
         {
-            btn(click_search);
+            btn(locate);
 
 
+        }
+        public searchbar(IWebDriver driver)
+        {
+            commondriver = driver;
         }
 
 
 
-        /*
 
         public void search_function(string men)
         {
-            btn(click_search);
-            Settext(search_type, men);
-            Thread.Sleep(8000);
-            btn(click_btn);
+            ForClick(click_search);
+            Settext(search_type,men);
+            Thread.Sleep(5000);
+            ForClick(click_btn);
         }
-        */
+        
     }
 
 

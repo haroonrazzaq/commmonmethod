@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="automation.cs" />
     <Compile Include="login.cs" />
+    <Compile Include="register.cs" />
     <Compile Include="searchbar.cs" />
     <Compile Include="CommonMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

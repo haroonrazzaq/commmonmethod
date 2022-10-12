@@ -11,19 +11,19 @@ using commmonmethod;
 
 namespace commonmethod
 {
-    [TestClass]
-    public class Automation:commmon_method
-    {
-        public TestContext instance;
-        public TestContext TestContext
+        [TestClass]
+        public class Automation:commmon_method
         {
+            //public TestContext instance;
+            //public TestContext TestContext
+            //{
 
-            set { instance = value; }
-            get { return instance; }
+            //    set { instance = value; }
+            //    get { return instance; }
 
-        }
+            //}
 
-        [TestMethod]
+       /* [TestMethod]
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", "drivern.xml", "login", DataAccessMethod.Sequential)]
         public void loginbutton()
         {
@@ -46,23 +46,47 @@ namespace commonmethod
 
 
         }
-        /*
+        */
+        
         //For Click on Search Field
 
-        [TestMethod]
-
-
+/*        [TestMethod]
 
          public void SearchCick() 
         {
             IWebDriver adriver = SeleniumInit("EdgeDriver");
+            adriver.Manage().Window.Maximize();
+            adriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+
             adriver.Url = " https://www.beyondeast.com/pages/women";
-            searchbar sb = new searchbar();
-            sb.ForClick();
-           // sb.search_function("Men");
+           
+            searchbar sb = new searchbar(adriver);
+            sb.search_function("Mens");
+
+        }*/
+
+
+        [TestMethod]
+
+        public void register()
+        {
+            IWebDriver adriver = SeleniumInit("EdgeDriver");
+            adriver.Manage().Window.Maximize();
+            adriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+
+            adriver.Url = " https://www.beyondeast.com/pages/women";
+            register reg = new register(adriver);
+            string f = "Muhammad";
+            string l = "Haroon";
+            string e = "haroonbhatt420@gmail.com";
+            string pas = "bhattiboy@1";
+            reg.register_functiom(f,l,e,pas);
 
         }
-        */
+
+
+
+
 
     }
 }
